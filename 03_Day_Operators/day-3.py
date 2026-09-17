@@ -12,7 +12,7 @@ print('Division: ', 7 / 2)
 print('Division without the remainder: ', 7 // 2)
 print('Modulus: ', 3 % 2)                           # Gives the remainder
 print('Division without the remainder: ', 7 // 3)
-print('Exponential: ', 3 ** 2)                     # it means 3 * 3
+print('Exponential: ', 3 ** 4)                     # it means 3 * 3 * 3 * 3 
 
 # Floating numbers
 print('Floating Number,PI', 3.14)
