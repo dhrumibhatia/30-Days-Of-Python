@@ -21,16 +21,16 @@ That is why I created 30 days of python."""
 print(multiline_string)
 
 # String Concatenation
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
+first_name = 'dhrumil'
+last_name = 'bhatia'
 space = ' '
 full_name = first_name + space + last_name
 print(full_name)  # Asabeneh Yetayeh
 # Checking length of a string using len() builtin function
-print(len(first_name))  # 8
-print(len(last_name))   # 7
-print(len(first_name) > len(last_name))  # True
-print(len(full_name))  # 15
+print(len(first_name))  
+print(len(last_name))   
+print(len(first_name) > len(last_name))  
+print(len(full_name))  
 
 # Unpacking characters
 language = 'Python'
@@ -119,15 +119,15 @@ print(challenge.find('y'))  # 5
 print(challenge.find('th'))  # 0
 
 # format()	formats string into nicer output
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
+first_name = 'dhrumil'
+last_name = 'bhatia'
 job = 'teacher'
-country = 'Finland'
+country = 'india'
 sentence = 'I am {} {}. I am a {}. I live in {}.'.format(
     first_name, last_name, job, country)
-print(sentence)  # I am Asabeneh Yetayeh. I am a teacher. I live in Finland.
+print(sentence)  # I am dhrumil bhatia. I am a teacher. I live in india.
 
-radius = 10
+radius = 11
 pi = 3.14
 area = pi  # radius ## 2
 result = 'The area of circle with {} is {}'.format(str(radius), str(area))
@@ -139,6 +139,7 @@ print(challenge.find('y'))  # 5
 print(challenge.find('th'))  # 0
 
 # isalnum(): Checks alphanumeric character
+# it means that it should only have the alphabets and numerical integers only, other will be invalid. 
 
 challenge = 'ThirtyDaysPython'
 print(challenge.isalnum())  # True
@@ -181,7 +182,7 @@ print(num.isdecimal())  # False
 
 
 # isidentifier():Checks for valid identifier means it check if a string is a valid variable name
-
+# this will check for valid variable.
 challenge = '30DaysOfPython'
 print(challenge.isidentifier())  # False, because it starts with a number
 challenge = 'thirty_days_of_python'
