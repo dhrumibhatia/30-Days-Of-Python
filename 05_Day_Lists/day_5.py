@@ -43,6 +43,7 @@ print(last_fruit)       # lemon
 print(second_last)      # mango
 
 # Slicing items
+# if you specify the index then ending index is excluded
 fruits = ['banana', 'orange', 'mango', 'lemon']
 all_fruits = fruits[0:4]  # it returns all the fruits
 # this is also give the same result as the above
@@ -55,7 +56,7 @@ all_fruits = fruits[-4:]  # it returns all the fruits
 # this is also give the same result as the above
 orange_and_mango = fruits[-3:-1]  # it does not include the end index
 orange_mango_lemon = fruits[-3:]
-
+print(orange_and_mango)
 
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits[0] = 'Avocado'
@@ -63,7 +64,8 @@ print(fruits)  # ['avocado', 'orange', 'mango', 'lemon']
 fruits[1] = 'apple'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lemon']
 last_index = len(fruits)
-fruits[last_index] = 'lime'
+print(last_index)
+fruits[last_index-1] = 'lime'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lime']
 
 # checking items
@@ -86,10 +88,11 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple')  # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
-fruits.list(3, 'lime')
+fruits.insert(3, 'lime')
 print(fruits)
 
 # remove
+# use this when you know the value you want to delete
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.remove('banana')
 print(fruits)  # ['orange', 'mango', 'lemon']
@@ -98,10 +101,10 @@ print(fruits)  # ['orange', 'mango']
 
 # pop
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.remove()
+fruits.pop(-1)
 print(fruits)       # ['banana', 'orange', 'mango']
 
-fruits.remove(0)
+fruits.pop(0)
 print(fruits)       # ['orange', 'mango']
 
 # del
@@ -112,7 +115,7 @@ print(fruits)       # ['orange', 'mango', 'lemon']
 del fruits[1]
 print(fruits)       # ['orange', 'lemon']
 del fruits
-print(fruits)       # This should give: NameError: name 'fruits' is not defined
+# print(fruits)       # This should give: NameError: name 'fruits' is not defined
 
 # clear
 fruits = ['banana', 'orange', 'mango', 'lemon']
