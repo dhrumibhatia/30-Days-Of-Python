@@ -224,3 +224,84 @@ def is_prime(num):
             return False
     return True
 print(is_prime(11))
+
+#2
+def unique_elements(lst):
+    return list(set(lst))
+print(unique_elements([1, 2, 2, 3, 4, 4, 5]))
+
+#3
+def same_datatype(li):
+    if not li:
+        return True
+    first_type = type(li[0])
+    return all(isinstance(item, first_type) for item in li)
+
+print(same_datatype([1, 2, 3, 4]))
+print(same_datatype([1, 2, 3.0, 4]))
+
+#4
+def is_valid_var(var):
+    import keyword
+    # 1. Structure check: Does it follow the naming rules? isidentifier() checks if the string is a valid identifier.
+    # 2. Keyword check: Is it a reserved Python word? keyword.iskeyword() checks if the string is a reserved keyword in Python.
+    if var.isidentifier() == True and not keyword.iskeyword(var):
+        return True
+    return False
+print(is_valid_var("my_variable"))
+print(is_valid_var("2nd_variable"))
+print(is_valid_var("for"))
+print(is_valid_var("variable-name"))
+
+#5
+'''
+Counties Data
+countiese-data.py
+'''
+
+from pathlib import Path
+import json
+
+# Import countries-data.py. Use the script location so this works from any folder.
+project_folder = Path(__file__).resolve().parents[1]
+
+if not (project_folder / 'data').is_dir():
+    raise FileNotFoundError(f'Could not find the data folder from {Path.cwd()}')
+
+data_file = project_folder / 'data' / 'countries-data.py'
+
+with open(data_file, 'r', encoding='utf-8') as file:
+    countries_data = json.load(file)
+
+from collections import Counter
+
+
+def most_spoken_languages(limit=10):
+    language_counter = Counter()
+
+    for country in countries_data:
+        for language in country.get('languages', []):
+            language_counter[language] += 1
+
+    return language_counter.most_common(limit)
+
+
+def most_populated_countries(limit=10):
+    populations = [
+        (country.get('name', 'Unknown'), country.get('population', 0))
+        for country in countries_data
+    ]
+
+    return sorted(populations, key=lambda item: item[1], reverse=True)[:limit]
+
+
+print("Most spoken languages:")
+for language, count in most_spoken_languages(10):
+    print(f"{language}: {count} countries")
+
+print("Most populated countries:")
+for country, population in most_populated_countries(10):
+    print(f"{country}: {population}")
+
+
+def most_spoken_languages():pass
